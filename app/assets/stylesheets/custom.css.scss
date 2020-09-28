@@ -37,6 +37,7 @@ body {
 #page-content {
   flex: 1 0 auto;
   background-color: lightgrey;
+  opacity: 0.8;
 }
 
 #sticky-footer {
@@ -45,7 +46,7 @@ body {
 }
 
 footer {
-  position: absolute;
+  position: sticky;
   bottom: 0;
   width: 100%;
 }
