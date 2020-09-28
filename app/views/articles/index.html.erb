@@ -1,26 +1,22 @@
-<h1>This is the index page listing all articles</h1>
+<div class=" bg-light">
+  <h1 class="text-center mt-3">This is the index page listing all articles</h1>
+  <% @articles.each do |article| %>
+  <div class="card w-50 mx-auto">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= article.title %></h5>
+      <p class="card-text"><%= article.description %></p>
+      <%= link_to 'Show', article_path(article.id), class: "btn btn-success" %>
+      <%= link_to 'Edit', edit_article_path(article.id), class: "btn btn-primary" %>
+      <%= link_to 'Delete', article_path(article.id), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+    </div>
+  </div>
+  <% end %>
+  
+  <p class="text-center">
+    <%= link_to 'Create new article', new_article_path, class: 'btn btn-primary' %>
+  </p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.description %></td>
-      <td><%= link_to 'Show', article_path(article.id) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article.id) %></td>
-      <td><%= link_to 'Delete', article_path(article.id), method: :delete, data: {confirm: 'Are you sure?'} %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-<p>
-  <%= link_to 'Create new article', new_article_path %>
-</p>

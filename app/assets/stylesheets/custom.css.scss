@@ -26,7 +26,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 425px;
+  height: 550px;
 }
 
 html,
@@ -41,4 +41,12 @@ body {
 
 #sticky-footer {
   flex-shrink: none;
+  padding-bottom: 0;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
