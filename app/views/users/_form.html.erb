@@ -10,21 +10,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :username %>
+<div class="text-center border border-dark w-25 mx-auto bg-light">
+  <div class="field d-flex flex-column w-75 mx-auto">
+    <%= form.label :username, class: 'font-weight-bold' %>
     <%= form.text_field :username %>
   </div>
-  <div class="field">
-    <%= form.label :email %>
+  <div class="field d-flex flex-column w-75 mx-auto">
+    <%= form.label :email, class: 'font-weight-bold' %>
     <%= form.text_field :email %>
   </div>
-  <div class="field">
-    <%= form.label :password %>
+  <div class="field d-flex flex-column w-75 mx-auto">
+    <%= form.label :password, class: 'font-weight-bold' %>
     <%= form.text_field :password %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Sign Up', class: 'btn btn-primary' %>
   </div>
+</div>
+
 <% end %>
