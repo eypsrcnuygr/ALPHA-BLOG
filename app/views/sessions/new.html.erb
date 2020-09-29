@@ -1,0 +1,20 @@
+<h1>Login</h1>
+
+<%= form_with(scope: :session, url: login_path, local: true) do |form| %>
+
+<div class="text-center border border-dark w-25 mx-auto bg-light">
+  <div class="field d-flex flex-column w-75 mx-auto">
+    <%= form.label :email, class: 'font-weight-bold' %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="field d-flex flex-column w-75 mx-auto">
+    <%= form.label :password, class: 'font-weight-bold' %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'login', class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<% end %>
