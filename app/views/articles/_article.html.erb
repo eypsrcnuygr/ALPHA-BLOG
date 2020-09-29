@@ -1,0 +1,20 @@
+<div>
+  <% obj.each do |article| %>
+  <div class="card w-50 mx-auto shadow">
+    <div class="card-header">
+      by <%= article.user.username if article.user%>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= article.title %></h5>
+      <p class="card-text"><%= article.description %></p>
+      <%= link_to 'Show', article_path(article.id), class: "btn btn-success" %>
+      <%= link_to 'Edit', edit_article_path(article.id), class: "btn btn-primary" %>
+      <%= link_to 'Delete', article_path(article.id), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+    </div>
+  </div>
+  <% end %>
+  
+  <p class="text-center">
+    <%= link_to 'Create new article', new_article_path, class: 'btn btn-primary' %>
+  </p>
+</div>

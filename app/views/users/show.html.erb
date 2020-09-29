@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h4 class="text-center">
   <strong>Username:</strong>
   <%= @user.username %>
-</p>
+</h4>
+<%= render 'articles/article', obj: @user.articles %>
+<div class="text-center">
+  <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-success' %> 
+  <%= link_to 'Back', articles_path, class: 'btn btn-info' %>
+</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
