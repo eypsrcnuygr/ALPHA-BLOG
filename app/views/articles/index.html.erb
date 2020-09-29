@@ -3,7 +3,7 @@
   <% @articles.each do |article| %>
   <div class="card w-50 mx-auto">
     <div class="card-header">
-      Featured
+      by <%= article.user.username if article.user%>
     </div>
     <div class="card-body">
       <h5 class="card-title"><%= article.title %></h5>
